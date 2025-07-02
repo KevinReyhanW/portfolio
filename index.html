@@ -271,6 +271,22 @@
       box-shadow: 0 2px 0 rgba(60, 180, 172, 0.8);
     }
 
+    .btn-tertiary {
+      background: var(--tertiary);
+      color: white;
+      box-shadow: 0 4px 0 rgba(210, 180, 77, 0.8);
+    }
+
+    .btn-tertiary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 rgba(210, 180, 77, 0.8);
+    }
+
+    .btn-tertiary:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 rgba(210, 180, 77, 0.8);
+    }
+
     /* Floating emoji cursor */
     .emoji-cursor {
       position: fixed;
@@ -697,7 +713,7 @@
       position: absolute;
       bottom: -8px;
       left: 0;
-      width: 50px;
+      width: 100%;
       height: 3px;
       background: var(--tertiary);
       border-radius: 2px;
@@ -841,106 +857,122 @@
     }
 
     /* Updated Footer Styles */
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
 
-.detail-item {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
+    /* Add this to your existing styles */
+    .detail-icon {
+      font-size: 1.2rem;
+      min-width: 24px;
+      /* Add fixed width for icons */
+      text-align: center;
+      /* Center the icon */
+    }
 
-.detail-icon {
-  font-size: 1.2rem;
-}
+    .detail-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.5rem;
+      /* Add some spacing between items */
+    }
 
-.contact-details a {
-  color: white;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
+    .contact-details a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      flex: 1;
+      /* Make text take remaining space */
+    }
 
-.contact-details a:hover {
-  color: var(--tertiary);
-  text-decoration: underline;
-}
+    .contact-details a:hover {
+      color: var(--tertiary);
+      text-decoration: underline;
+    }
 
-.working-hours {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+    .working-hours {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
 
-.hours-item {
-  display: flex;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.8rem;
-  border-radius: var(--radius);
-}
+    .hours-item {
+      display: flex;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.8rem;
+      border-radius: var(--radius);
+    }
 
-.day {
-  font-weight: bold;
-}
+    .day {
+      font-weight: bold;
+    }
 
-.hours {
-  color: var(--tertiary);
-}
+    .hours {
+      color: var(--tertiary);
+    }
 
-.availability {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: var(--radius);
-}
+    .availability {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: var(--radius);
+    }
 
-.available {
-  color: var(--tertiary);
-  font-weight: bold;
-  position: relative;
-}
+    .available {
+      color: var(--tertiary);
+      font-weight: bold;
+      position: relative;
+    }
 
-.available:after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--tertiary);
-  animation: underline-pulse 2s infinite;
-}
+    .available:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--tertiary);
+      animation: underline-pulse 2s infinite;
+    }
 
-@keyframes underline-pulse {
-  0%, 100% { width: 100%; }
-  50% { width: 50%; }
-}
+    @keyframes underline-pulse {
 
-.footer-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
+      0%,
+      100% {
+        width: 100%;
+      }
 
-.footer-social {
-  display: flex;
-  gap: 1.5rem;
-  font-size: 1.5rem;
-}
+      50% {
+        width: 50%;
+      }
+    }
 
-.footer-social .social-icon {
-  transition: all 0.3s ease;
-}
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-.footer-social .social-icon:hover {
-  transform: translateY(-5px) rotate(10deg);
-  color: var(--tertiary);
-}
+    .footer-social {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .footer-social .social-icon {
+      transition: all 0.3s ease;
+    }
+
+    .footer-social .social-icon:hover {
+      transform: translateY(-5px) rotate(10deg);
+      color: var(--tertiary);
+    }
   </style>
 </head>
 
@@ -972,6 +1004,7 @@
       <div class="hero-buttons">
         <a href="#projects" class="btn btn-primary">See my work</a>
         <a href="#contact" class="btn btn-secondary">Contact me</a>
+        <a href="cv.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-tertiary">View CV 📄</a>
       </div>
     </div>
   </section>
@@ -1067,7 +1100,7 @@
           <div class="timeline-dot"></div>
           <div class="timeline-date">Present</div>
           <div class="timeline-company">PT Starlink Teknologi Integrasi</div>
-          <div class="timeline-position">Fullstack Developer</div>
+          <!-- <div class="timeline-position">Fullstack Developer</div> -->
           <div class="timeline-description">
             <ul>
               <li>Maintained and developed an internal attendance tracking app</li>
@@ -1083,7 +1116,7 @@
           <div class="timeline-dot"></div>
           <div class="timeline-date">Client Projects</div>
           <div class="timeline-company">PLN Icon Plus</div>
-          <div class="timeline-position">Frontend Developer</div>
+          <!-- <div class="timeline-position">Fullstack Developer</div> -->
           <div class="timeline-description">
             <ul>
               <li>Developed Vue.js web app for monitoring rooftop solar panel installations</li>
@@ -1095,15 +1128,14 @@
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-date">Client Projects</div>
-          <div class="timeline-company">PLN Icon Plus</div>
-          <div class="timeline-position">Frontend Developer</div>
+          <div class="timeline-date">Client Project</div>
+          <div class="timeline-company">PT Pamapersada Nusantara (PAMA)</div>
+          <!-- <div class="timeline-position">Frontend Developer</div> -->
           <div class="timeline-description">
             <ul>
-              <li>Developed Vue.js web app for monitoring rooftop solar panel installations</li>
-              <li>Delivered frontend data-entry app for EV charging stations</li>
-              <li>Maintained Vue-based road monitoring app with real-time CCTV footage</li>
-              <li>Built visitor management system with face scanning features</li>
+              <li>Developed a web application to monitor EV charger usage, including historical usage reports and
+                real-time data on
+                currently active users</li>
             </ul>
           </div>
         </div>
@@ -1119,58 +1151,90 @@
       </div>
 
       <div class="projects-grid">
+        <!-- 1. EV Charging Dashboard -->
         <div class="project-card">
-          <img src="https://placehold.co/600x400?text=EV+Charging+Dashboard" alt="EV Charging Dashboard"
-            class="project-image">
+          <img draggable="false" src="pama.png" alt="EV Charging Dashboard" class="project-image">
           <div class="project-content">
             <h3 class="project-title">EV Charging Dashboard</h3>
-            <p>Real-time monitoring system for electric vehicle charging stations with usage reports.</p>
-
+            <p>Web application to monitor EV charger usage with historical reports and real-time data on active users.
+            </p>
             <div class="project-tags">
               <span class="project-tag">Vue.js</span>
               <span class="project-tag">Node.js</span>
               <span class="project-tag">WebSockets</span>
             </div>
-
-            <!-- <div class="project-links">
-              <a href="#" class="project-link">Live Demo →</a>
-            </div> -->
           </div>
         </div>
 
+        <!-- 2. I-SEE (Road Monitoring App) -->
         <div class="project-card">
-          <img src="https://placehold.co/600x400?text=Catering+Platform" alt="Catering Platform" class="project-image">
+          <img src="isee.png" alt="I-SEE Road Monitoring" class="project-image">
           <div class="project-content">
-            <h3 class="project-title">Catering Platform</h3>
-            <p>Coordination system between businesses and catering vendors with order management.</p>
-
+            <h3 class="project-title">I-SEE Road Monitoring</h3>
+            <p>Vue-based app for viewing real-time CCTV footage and tracking entry/exit counts of people and vehicles.
+            </p>
             <div class="project-tags">
               <span class="project-tag">Vue.js</span>
-              <span class="project-tag">Vuetify</span>
-              <span class="project-tag">Express</span>
+              <span class="project-tag">Vuesax</span>
+              <span class="project-tag">Maintenance</span>
             </div>
-
-            <!-- <div class="project-links">
-              <a href="#" class="project-link">Case Study →</a>
-            </div> -->
           </div>
         </div>
 
+        <!-- 3. Visitor Management System -->
         <div class="project-card">
-          <img src="https://placehold.co/600x400?text=Visitor+System" alt="Visitor System" class="project-image">
+          <img src="lunavis.png" alt="Visitor System" class="project-image">
           <div class="project-content">
             <h3 class="project-title">Visitor Management</h3>
-            <p>Web-based system for tracking visitor check-ins with face scanning features.</p>
-
+            <p>Web-based system for tracking visitor check-in/out times, managing pre-bookings, and face scanning
+              features.</p>
             <div class="project-tags">
               <span class="project-tag">Vue.js</span>
               <span class="project-tag">Flutter</span>
               <span class="project-tag">Face API</span>
             </div>
+          </div>
+        </div>
 
-            <!-- <div class="project-links">
-              <a href="#" class="project-link">Details →</a>
-            </div> -->
+        <!-- 4. POS System -->
+        <div class="project-card">
+          <img src="nagopos.png" alt="POS System" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">Point of Sale System</h3>
+            <p>Complete POS system handling retail transactions and inventory management with backend APIs.</p>
+            <div class="project-tags">
+              <span class="project-tag">Vue.js</span>
+              <span class="project-tag">Flutter</span>
+              <span class="project-tag">Node.js</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Attendance Application -->
+        <div class="project-card">
+          <img src="masukaja.png" alt="Attendance App" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">Attendance System</h3>
+            <p>Internal application for tracking employee attendance with maintenance and ongoing development.</p>
+            <div class="project-tags">
+              <span class="project-tag">Vue.js</span>
+              <span class="project-tag">Maintenance</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. PV Rooftop App -->
+        <div class="project-card">
+          <img src="ilios.png" alt="PV Rooftop App" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">PV Rooftop App</h3>
+            <p>Vue.js web app for monitoring and ordering rooftop solar panel installations, with junior developer
+              training.</p>
+            <div class="project-tags">
+              <span class="project-tag">Vue.js</span>
+              <span class="project-tag">Vuetify</span>
+              <span class="project-tag">Maintenance</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1204,16 +1268,18 @@
       </div> -->
 
       <div class="social-links">
-        <a href="mailto:kevinreyhanww@gmail.com" class="social-link">📧</a>
-        <a href="tel:+62878777555147" class="social-link">📱</a>
-        <a href="#" class="social-link">💼</a>
-        <a href="#" class="social-link">🐙</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kevinreyhanww@gmail.com&su=Let's Work Together&body=Hi Kevin,%0A%0AI saw your portfolio..."
+          class="social-link" target="_blank">📧</a>
+        <a href="https://api.whatsapp.com/send?phone=62878777555147&text=Hi%20Kevin%2C%20I%20saw%20your%20portfolio..."
+          class="social-link">📱</a>
+        <a href="https://www.linkedin.com/in/rkevinreyhanwirayudha" class="social-link" target="_blank">💼</a>
+        <!-- <a href="#" class="social-link">🐙</a> -->
       </div>
     </div>
   </section>
 
   <!-- Floating action button -->
-  <button class="fab" aria-label="Contact me">✉️</button>
+  <!-- <button class="fab" aria-label="Contact me">✉️</button> -->
 
   <!-- Bottom navigation -->
   <nav class="bottom-nav">
@@ -1239,45 +1305,6 @@
     </a>
   </nav>
 
-  <!-- <footer>
-    <div class="footer-container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h3>Let's Connect</h3>
-          <div class="footer-social">
-            <a href="#" class="social-icon">💼 LinkedIn</a>
-            <a href="#" class="social-icon">🐙 GitHub</a>
-            <a href="#" class="social-icon">📧 Email</a>
-            <a href="#" class="social-icon">📱 WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="footer-section">
-          <h3>Fun Fact</h3>
-          <div class="fun-fact">
-            <p>Did you know? This website uses <span class="highlight">0 JavaScript frameworks</span> - just pure
-              vanilla JS for those smooth animations!</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>Made with <span class="heart">❤️</span> and <span class="coffee">☕</span> by Kevin Reyhan</p>
-        <p class="copyright">© <span id="year"></span> All rights reserved</p>
-      </div>
-    </div>
-  </footer> -->
   <footer>
     <div class="footer-container">
       <div class="footer-content">
